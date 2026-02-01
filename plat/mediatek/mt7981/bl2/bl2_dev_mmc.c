@@ -25,6 +25,7 @@ static const struct msdc_compatible mt7981_msdc0_compat = {
 	.data_tune = true,
 	.busy_check = true,
 	.stop_clk_fix = true,
+	.enhance_rx = true,
 };
 
 static const uint32_t msdc0_pins[] = {
@@ -36,7 +37,7 @@ static const uint32_t msdc0_pins[] = {
 static const uint32_t msdc0_pupd[] = {
         MT_GPIO_PULL_UP, MT_GPIO_PULL_UP, MT_GPIO_PULL_UP, MT_GPIO_PULL_UP,
         MT_GPIO_PULL_UP, MT_GPIO_PULL_UP, MT_GPIO_PULL_UP, MT_GPIO_PULL_UP,
-        MT_GPIO_PULL_UP, MT_GPIO_PULL_UP, MT_GPIO_PULL_DOWN,
+        MT_GPIO_PULL_UP, MT_GPIO_PULL_UP, MT_GPIO_PULL_UP,
 };
 
 
@@ -59,7 +60,7 @@ static const struct mt7981_msdc_conf {
 	{
 		.base = MSDC0_BASE,
 		.top_base = MSDC0_TOP_BASE,
-		.bus_width = MMC_BUS_WIDTH_8,
+		.bus_width = MMC_BUS_WIDTH_1,
 		.type = MMC_IS_EMMC,
 		.src_clk = 40000000,
 		.dev_comp = &mt7981_msdc0_compat,
@@ -68,7 +69,7 @@ static const struct mt7981_msdc_conf {
 	{
 		.base = MSDC0_BASE,
 		.top_base = MSDC0_TOP_BASE,
-		.bus_width = MMC_BUS_WIDTH_4,
+		.bus_width = MMC_BUS_WIDTH_1,
 		.type = MMC_IS_SD,
 		.src_clk = 40000000,
 		.dev_comp = &mt7981_msdc0_compat,
